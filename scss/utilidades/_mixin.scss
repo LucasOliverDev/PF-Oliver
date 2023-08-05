@@ -1,0 +1,8 @@
+@mixin footer-escritorio($position,$bottom,$width){
+    position: $position;
+    bottom: $bottom;  
+    width: $width;
+    display: flex;
+    justify-content: center;
+    color: $color-font-secundario;
+}

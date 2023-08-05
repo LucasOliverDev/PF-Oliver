@@ -1,0 +1,224 @@
+@import "utilidades/extend";
+@import "utilidades/mixin";
+@import "utilidades/variables";
+
+//ESTILOS GENERALES
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Cormorant Garamond', serif;
+    text-decoration: none !important;
+}
+
+
+body{
+    background-color: $color-fondo;
+    //HEADER
+    header{
+        @extend %flex-center;
+        justify-content: space-around;
+        color: $color-font-principal;
+        padding: 30px 0;
+        div{
+            @extend %flex-center;
+            h1{
+                font-size: 60px; 
+                a{
+                    color: $color-font-principal;
+                }
+            }
+            i.icono-header{
+                padding: 25px 20px 20px;
+                font-size: 30px;
+                --fa-animation-duration: 5s;
+                color: $color-font-secundario;
+            }
+        }
+        nav{
+            svg.menu{
+                display: none;
+                color: $color-font-principal;
+                width: 50px;
+                height: 50px;
+            }
+            ul{
+                @extend %flex-center;
+                li{
+                    font-style: italic;
+                    padding-left: 50px;
+                    list-style: none;
+                    font-size: 30px;  
+                    a{
+                        color: $color-font-principal;
+                    }
+                }
+            }
+        }
+    }
+    //MAIN
+    main{
+        padding: 45px 0;
+        display: grid;
+        align-items: center;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        color: $color-font-principal;
+        div.cita{
+            height: 100%;
+            padding-left: 20%;
+            display: grid;
+            align-items: center;
+            h2{
+                font-size: 28px;
+                line-height: 3;
+                font-style: italic;
+                text-align: center;
+            }
+        }
+        div.botella{
+            background-image: url("../img/fireplace.jpg");
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-position: right;
+            display: flex;
+            justify-content: center;
+            overflow: hidden;
+            margin-left: 200px;
+            img{
+                width: 315px;
+                height: 690px;
+            }
+        }
+        section{
+            display: grid;
+            justify-content: center;
+            padding-left: 200px;
+            width: 800px;
+            iframe{
+                width: 100%;
+            }
+            h2{
+                font-size: 35px;
+                text-align: center;
+                padding-bottom: 70px;    
+            }
+            p{
+                font-size: 23px;
+                text-align: center;
+            }
+            ul{
+                margin-top: 30px;
+                font-size: 20px;
+                li{
+                    margin-bottom: 10px;
+                }
+            }
+            div.flechas{
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 1fr;
+            }
+            div{
+                display: flex;
+                justify-content: center;
+                padding-top: 70px;
+            }
+        }
+        div.icono-redes{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            height: 60vh;
+            width: 100vw;
+            align-items: center;
+            background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(79,31,0,1) 45%, rgba(79,31,0,1) 55%, rgba(0,0,0,1) 100%);
+        }
+        div{
+            a{
+                @extend %flex-center;
+                font-size: 50px;
+                color: $color-font-principal;
+                justify-content: center;
+                p{
+                    padding-left: 40px;
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+    //FOOTER
+    footer{
+        @include footer-escritorio(absolute,0,100vw);
+    }
+}
+
+
+//Media Query para tablet
+@media screen and (min-width: 1200px){
+
+}
+
+
+//Media Query para celular
+@media screen and (max-width: 480px){
+body{
+    header{
+        justify-content: space-between;
+        width: 100vw;
+        div{
+            width: 50%;
+            padding-left: 30px;
+            h1{
+                font-size: 40px;
+            }
+            i.icono-header{
+                display: none;
+            }
+        }
+        nav{
+            width: 480px;
+            ul{
+                li{
+                    display: none;
+                }
+            }
+            svg.menu{
+                display: block;
+                position: absolute;
+                top: 60px;
+                right: 30px;
+            }
+        }
+    }
+    main{
+        padding: 0;
+        grid-template-columns: 1fr;
+        div.cita{
+            padding: 10px 30px 25px 30px;
+            h2{
+                font-size: 22px;
+                line-height: 2;
+            }
+        }
+        div.botella{
+            margin-left: 0;
+            img{
+                width: 35%;
+                height: 35%;
+            }
+        }
+    }
+    footer{
+        p{
+            margin-bottom: 0;
+            text-align: center;
+        }
+    }
+}
+}
