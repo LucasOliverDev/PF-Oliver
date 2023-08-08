@@ -18,7 +18,7 @@ body{
         @extend %flex-center;
         justify-content: space-around;
         color: $color-font-principal;
-        padding: 30px 0;
+        padding: 30px 30px;
         div{
             @extend %flex-center;
             h1{
@@ -35,21 +35,36 @@ body{
             }
         }
         nav{
-            svg.menu{
-                display: none;
-                color: $color-font-principal;
-                width: 50px;
-                height: 50px;
+            button.btn{
+                position: absolute;
+                top: 30px;
+                right: 30px;
+                background-color: transparent;
+                border: none;
             }
-            ul{
-                @extend %flex-center;
-                li{
-                    font-style: italic;
-                    padding-left: 50px;
-                    list-style: none;
-                    font-size: 30px;  
-                    a{
-                        color: $color-font-principal;
+            div.offcanvas-xl{
+                div.offcanvas-header{
+                    button.btn-close{
+                        position: absolute;
+                        right: 54px;
+                        top: 47px;
+                    }
+                }
+                div.offcanvas-body{
+                    ul{
+                        @extend %flex-center;
+                        position: inherit;
+                        li{
+                            font-style: italic;
+                            padding-left: 50px;
+                            list-style: none;
+                            font-size: 30px;  
+                            width: 220px;
+                            text-align: center;
+                            a{
+                                color: $color-font-principal;
+                            }
+                        }
                     }
                 }
             }
@@ -77,9 +92,9 @@ body{
         }
         div.botella{
             background-image: url("../img/fireplace.jpg");
-            background-size: 100%;
+            background-size: 600px;
             background-repeat: no-repeat;
-            background-position: right;
+            background-position: center;
             display: flex;
             justify-content: center;
             overflow: hidden;
@@ -154,13 +169,12 @@ body{
     }
     //FOOTER
     footer{
-        @include footer-escritorio(absolute,0,100vw);
+        @include footer(absolute,0,100vw);
     }
 }
 
-
 //Media Query para tablet
-@media screen and (min-width: 551px) and (max-width: 1200px){
+@media screen and (min-width: 481px) and (max-width: 1200px){
 body{
     header{
         justify-content: space-between;
@@ -172,23 +186,33 @@ body{
             i.icono-header{
                 display: none;
             }
-        }
+        } 
         nav{
-            width: 480px;
-            ul{
-                li{
-                    display: none;
+            div.offcanvas-xl{
+                padding-left: 0;
+                width: 300px !important;
+                background-color: rgb(15, 15, 15);
+                div.offcanvas-header{
+                    button.btn-close{
+                        background-color: $color-font-principal;
+                        opacity: 1;
+                        border-radius: 50%;
+                    }
+                }
+                div.offcanvas-body{
+                    flex-grow: 0;
+                    line-height: 3.5;
+                    ul{
+                        flex-direction: column;  
+                        padding-left: 0;
+                        padding-top: 70px;
+                        li{
+                            padding-left: 0;
+                        }
+                    }
                 }
             }
-            svg.menu{
-                display: block;
-                position: absolute;
-                top: 29px;
-                right: 60px;
-                width: 60px;
-                height: 60px;
-            }
-        }
+        }  
     }
     main{
         padding: 0;
@@ -202,9 +226,12 @@ body{
         }
         div.botella{
             margin-left: 0;
+            margin-top: 25px;
+            background-size: 500px;
+            background-position: center;
             img{
-                width: 22%;
-                height: 22%;
+                width: 190px;
+                height: 380px;
             }
         }
         div.botella-mediaquery{
@@ -213,8 +240,8 @@ body{
         section{
             height: 100%;
             width: 100%;
-            padding-left: 80px;
-            padding-right: 80px;
+            padding-left: 30px;
+            padding-right: 30px;
             display: grid;
             grid-template-columns: 1fr;
             h2{
@@ -228,6 +255,7 @@ body{
             p{
                 font-size: 20px;
                 margin-bottom: 0;
+                margin-top: 30px;
             }
             div, div.flechas{
                 display: none;
@@ -240,6 +268,9 @@ body{
         section.section-media-query-tablet{
             margin-top: 5%;
             height: 80%;
+            ul{
+                padding-top: 0;
+            }
         }
         div.icono-redes{
             grid-template-columns: 1fr;
@@ -251,12 +282,12 @@ body{
 
 
 //Media Query para celular
-@media screen and (max-width: 550px){
+@media screen and (max-width: 480px){
 body{
     header{
         justify-content: space-between;
         div{
-            padding-left: 30px;
+            width: 300px;
             h1{
                 font-size: 40px;
             }
@@ -265,25 +296,40 @@ body{
             }
         }
         nav{
-            width: 480px;
-            ul{
-                li{
-                    display: none;
+            button.btn{
+                right: 10px;
+            }
+            div.offcanvas-xl{
+                padding-left: 0;
+                width: 300px;
+                background-color: rgb(15, 15, 15);
+                div.offcanvas-header{
+                    button.btn-close{
+                        background-color: $color-font-principal;
+                        opacity: 1;
+                        border-radius: 50%;
+                    }
+                }
+                div.offcanvas-body{
+                    flex-grow: 0;
+                    line-height: 3.5;
+                    ul{
+                        flex-direction: column;  
+                        padding-left: 0;
+                        padding-top: 70px;
+                        li{
+                            padding-left: 0;
+                        }
+                    }
                 }
             }
-            svg.menu{
-                display: block;
-                position: absolute;
-                top: 60px;
-                right: 30px;
-            }
-        }
+        }  
     }
     main{
         padding: 0;
         grid-template-columns: 1fr;
         div.cita{
-            padding: 10px 30px 25px 30px;
+            padding: 0 30px 10px 30px;
             h2{
                 font-size: 22px;
                 line-height: 2;
@@ -305,7 +351,7 @@ body{
             padding-right: 20px;
             h2{
                 font-size: 30px;
-                padding-bottom: 30px;
+                padding-bottom: 15px;
             }
             h2.h2-mediaquery-degustar{
                 padding-top: 80px;
@@ -313,7 +359,13 @@ body{
             }
             p{
                 font-size: 20px;
-                margin-bottom: 40px;
+                margin-bottom: 0;
+                margin-top: 30px;
+            }
+            ul{
+                li{
+                    font-size: 16px;
+                }
             }
             div, div.flechas{
                 display: none;

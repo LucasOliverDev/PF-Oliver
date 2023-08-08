@@ -1,4 +1,4 @@
-body header, body header div, body header nav ul, body main div a {
+body header, body header div, body header nav div.offcanvas-xl div.offcanvas-body ul, body main div a {
   display: flex;
   align-items: center; }
 
@@ -13,7 +13,7 @@ body {
   body header {
     justify-content: space-around;
     color: white;
-    padding: 30px 0; }
+    padding: 30px 30px; }
     body header div h1 {
       font-size: 60px; }
       body header div h1 a {
@@ -23,18 +23,27 @@ body {
       font-size: 30px;
       --fa-animation-duration: 5s;
       color: #621d00; }
-    body header nav svg.menu {
-      display: none;
-      color: white;
-      width: 50px;
-      height: 50px; }
-    body header nav ul li {
-      font-style: italic;
-      padding-left: 50px;
-      list-style: none;
-      font-size: 30px; }
-      body header nav ul li a {
-        color: white; }
+    body header nav button.btn {
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      background-color: transparent;
+      border: none; }
+    body header nav div.offcanvas-xl div.offcanvas-header button.btn-close {
+      position: absolute;
+      right: 54px;
+      top: 47px; }
+    body header nav div.offcanvas-xl div.offcanvas-body ul {
+      position: inherit; }
+      body header nav div.offcanvas-xl div.offcanvas-body ul li {
+        font-style: italic;
+        padding-left: 50px;
+        list-style: none;
+        font-size: 30px;
+        width: 220px;
+        text-align: center; }
+        body header nav div.offcanvas-xl div.offcanvas-body ul li a {
+          color: white; }
   body main {
     padding: 45px 0;
     display: grid;
@@ -54,9 +63,9 @@ body {
         text-align: center; }
     body main div.botella {
       background-image: url("../img/fireplace.jpg");
-      background-size: 100%;
+      background-size: 600px;
       background-repeat: no-repeat;
-      background-position: right;
+      background-position: center;
       display: flex;
       justify-content: center;
       overflow: hidden;
@@ -116,11 +125,12 @@ body {
     position: absolute;
     bottom: 0;
     width: 100vw;
+    text-align: center;
     display: flex;
     justify-content: center;
     color: #621d00; }
 
-@media screen and (min-width: 551px) and (max-width: 1200px) {
+@media screen and (min-width: 481px) and (max-width: 1200px) {
   body header {
     justify-content: space-between; }
     body header div {
@@ -129,17 +139,23 @@ body {
         font-size: 40px; }
       body header div i.icono-header {
         display: none; }
-    body header nav {
-      width: 480px; }
-      body header nav ul li {
-        display: none; }
-      body header nav svg.menu {
-        display: block;
-        position: absolute;
-        top: 29px;
-        right: 60px;
-        width: 60px;
-        height: 60px; }
+    body header nav div.offcanvas-xl {
+      padding-left: 0;
+      width: 300px !important;
+      background-color: #0f0f0f; }
+      body header nav div.offcanvas-xl div.offcanvas-header button.btn-close {
+        background-color: white;
+        opacity: 1;
+        border-radius: 50%; }
+      body header nav div.offcanvas-xl div.offcanvas-body {
+        flex-grow: 0;
+        line-height: 3.5; }
+        body header nav div.offcanvas-xl div.offcanvas-body ul {
+          flex-direction: column;
+          padding-left: 0;
+          padding-top: 70px; }
+          body header nav div.offcanvas-xl div.offcanvas-body ul li {
+            padding-left: 0; }
   body main {
     padding: 0;
     grid-template-columns: 1fr; }
@@ -149,17 +165,20 @@ body {
         font-size: 22px;
         line-height: 2; }
     body main div.botella {
-      margin-left: 0; }
+      margin-left: 0;
+      margin-top: 25px;
+      background-size: 500px;
+      background-position: center; }
       body main div.botella img {
-        width: 22%;
-        height: 22%; }
+        width: 190px;
+        height: 380px; }
     body main div.botella-mediaquery {
       display: none; }
     body main section {
       height: 100%;
       width: 100%;
-      padding-left: 80px;
-      padding-right: 80px;
+      padding-left: 30px;
+      padding-right: 30px;
       display: grid;
       grid-template-columns: 1fr; }
       body main section h2 {
@@ -170,7 +189,8 @@ body {
         padding-bottom: 50px; }
       body main section p {
         font-size: 20px;
-        margin-bottom: 0; }
+        margin-bottom: 0;
+        margin-top: 30px; }
       body main section div, body main section div.flechas {
         display: none; }
       body main section iframe {
@@ -179,33 +199,45 @@ body {
     body main section.section-media-query-tablet {
       margin-top: 5%;
       height: 80%; }
+      body main section.section-media-query-tablet ul {
+        padding-top: 0; }
     body main div.icono-redes {
       grid-template-columns: 1fr;
       grid-template-rows: 1fr 1fr 1fr 1fr; } }
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 480px) {
   body header {
     justify-content: space-between; }
     body header div {
-      padding-left: 30px; }
+      width: 300px; }
       body header div h1 {
         font-size: 40px; }
       body header div i.icono-header {
         display: none; }
-    body header nav {
-      width: 480px; }
-      body header nav ul li {
-        display: none; }
-      body header nav svg.menu {
-        display: block;
-        position: absolute;
-        top: 60px;
-        right: 30px; }
+    body header nav button.btn {
+      right: 10px; }
+    body header nav div.offcanvas-xl {
+      padding-left: 0;
+      width: 300px;
+      background-color: #0f0f0f; }
+      body header nav div.offcanvas-xl div.offcanvas-header button.btn-close {
+        background-color: white;
+        opacity: 1;
+        border-radius: 50%; }
+      body header nav div.offcanvas-xl div.offcanvas-body {
+        flex-grow: 0;
+        line-height: 3.5; }
+        body header nav div.offcanvas-xl div.offcanvas-body ul {
+          flex-direction: column;
+          padding-left: 0;
+          padding-top: 70px; }
+          body header nav div.offcanvas-xl div.offcanvas-body ul li {
+            padding-left: 0; }
   body main {
     padding: 0;
     grid-template-columns: 1fr; }
     body main div.cita {
-      padding: 10px 30px 25px 30px; }
+      padding: 0 30px 10px 30px; }
       body main div.cita h2 {
         font-size: 22px;
         line-height: 2; }
@@ -222,13 +254,16 @@ body {
       padding-right: 20px; }
       body main section h2 {
         font-size: 30px;
-        padding-bottom: 30px; }
+        padding-bottom: 15px; }
       body main section h2.h2-mediaquery-degustar {
         padding-top: 80px;
         padding-bottom: 50px; }
       body main section p {
         font-size: 20px;
-        margin-bottom: 40px; }
+        margin-bottom: 0;
+        margin-top: 30px; }
+      body main section ul li {
+        font-size: 16px; }
       body main section div, body main section div.flechas {
         display: none; }
     body main div.icono-redes {
