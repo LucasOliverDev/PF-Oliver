@@ -13,7 +13,11 @@ body {
   body header {
     justify-content: space-around;
     color: white;
-    padding: 30px 30px; }
+    padding: 0;
+    background-color: #0f0f0f;
+    -webkit-box-shadow: 1px 1px 7px 5px #621d00;
+    -moz-box-shadow: 1px 1px 7px 5px #621d00;
+    box-shadow: 1px 1px 7px 5px #621d00; }
     body header div h1 {
       font-size: 60px; }
       body header div h1 a {
@@ -24,17 +28,16 @@ body {
       --fa-animation-duration: 5s;
       color: #621d00; }
     body header nav button.btn {
-      position: absolute;
-      top: 30px;
-      right: 30px;
+      padding-right: 40px;
       background-color: transparent;
       border: none; }
     body header nav div.offcanvas-xl div.offcanvas-header button.btn-close {
       position: absolute;
-      right: 54px;
-      top: 47px; }
+      right: 52px;
+      top: 20px; }
     body header nav div.offcanvas-xl div.offcanvas-body ul {
-      position: inherit; }
+      position: inherit;
+      margin-bottom: 0; }
       body header nav div.offcanvas-xl div.offcanvas-body ul li {
         font-style: italic;
         padding-left: 50px;
@@ -42,10 +45,13 @@ body {
         font-size: 30px;
         width: 220px;
         text-align: center; }
+        body header nav div.offcanvas-xl div.offcanvas-body ul li :hover {
+          transition: 0.7s;
+          color: #68321f; }
         body header nav div.offcanvas-xl div.offcanvas-body ul li a {
           color: white; }
   body main {
-    padding: 45px 0;
+    padding: 65px 0;
     display: grid;
     align-items: center;
     grid-template-columns: 1fr 1fr;
@@ -140,6 +146,9 @@ body {
       body header div i.icono-header {
         display: none; }
     body header nav div.offcanvas-xl {
+      -webkit-box-shadow: 1px 1px 7px 5px #621d00;
+      -moz-box-shadow: 1px 1px 7px 5px #621d00;
+      box-shadow: 1px 1px 7px 5px #621d00;
       padding-left: 0;
       width: 300px !important;
       background-color: #0f0f0f; }
@@ -160,7 +169,7 @@ body {
     padding: 0;
     grid-template-columns: 1fr; }
     body main div.cita {
-      padding: 20px 30px 25px 30px; }
+      padding: 40px 30px 25px 30px; }
       body main div.cita h2 {
         font-size: 22px;
         line-height: 2; }
@@ -183,7 +192,8 @@ body {
       grid-template-columns: 1fr; }
       body main section h2 {
         font-size: 30px;
-        padding-bottom: 30px; }
+        padding-bottom: 30px;
+        padding-top: 30px; }
       body main section h2.h2-mediaquery-degustar {
         padding-top: 60px;
         padding-bottom: 50px; }
@@ -209,7 +219,7 @@ body {
   body header {
     justify-content: space-between; }
     body header div {
-      width: 300px; }
+      padding-left: 20px; }
       body header div h1 {
         font-size: 40px; }
       body header div i.icono-header {
@@ -217,8 +227,11 @@ body {
     body header nav button.btn {
       right: 10px; }
     body header nav div.offcanvas-xl {
+      -webkit-box-shadow: 1px 1px 7px 5px #621d00;
+      -moz-box-shadow: 1px 1px 7px 5px #621d00;
+      box-shadow: 1px 1px 7px 5px #621d00;
       padding-left: 0;
-      width: 300px;
+      width: 300px !important;
       background-color: #0f0f0f; }
       body header nav div.offcanvas-xl div.offcanvas-header button.btn-close {
         background-color: white;
@@ -237,12 +250,13 @@ body {
     padding: 0;
     grid-template-columns: 1fr; }
     body main div.cita {
-      padding: 0 30px 10px 30px; }
+      padding: 40px 30px 10px 30px; }
       body main div.cita h2 {
         font-size: 22px;
         line-height: 2; }
     body main div.botella {
-      margin-left: 0; }
+      margin-left: 0;
+      margin-top: 10px; }
       body main div.botella img {
         width: 35%;
         height: 35%; }
@@ -254,18 +268,21 @@ body {
       padding-right: 20px; }
       body main section h2 {
         font-size: 30px;
-        padding-bottom: 15px; }
+        padding-bottom: 15px;
+        padding-top: 30px; }
       body main section h2.h2-mediaquery-degustar {
         padding-top: 80px;
         padding-bottom: 50px; }
       body main section p {
         font-size: 20px;
         margin-bottom: 0;
-        margin-top: 30px; }
+        margin-top: 15px; }
       body main section ul li {
         font-size: 16px; }
       body main section div, body main section div.flechas {
         display: none; }
     body main div.icono-redes {
       grid-template-columns: 1fr;
-      grid-template-rows: 1fr 1fr 1fr 1fr; } }
+      grid-template-rows: 1fr 1fr 1fr 1fr; }
+      body main div.icono-redes a p {
+        font-size: 30px; } }
