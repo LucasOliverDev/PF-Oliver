@@ -26,7 +26,7 @@ body {
       padding: 25px 20px 20px;
       font-size: 30px;
       --fa-animation-duration: 5s;
-      color: #621d00; }
+      color: #753920; }
     body header nav button.btn {
       padding-right: 40px;
       background-color: transparent;
@@ -47,7 +47,7 @@ body {
         text-align: center; }
         body header nav div.offcanvas-xl div.offcanvas-body ul li :hover {
           transition: 0.7s;
-          color: #68321f; }
+          color: #7d4d38; }
         body header nav div.offcanvas-xl div.offcanvas-body ul li a {
           color: white; }
   body main {
@@ -134,7 +134,7 @@ body {
     text-align: center;
     display: flex;
     justify-content: center;
-    color: #621d00; }
+    color: #753920; }
 
 @media screen and (min-width: 481px) and (max-width: 1200px) {
   body header {
